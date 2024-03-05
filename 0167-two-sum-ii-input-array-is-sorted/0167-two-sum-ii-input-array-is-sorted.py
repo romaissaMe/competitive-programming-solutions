@@ -8,7 +8,7 @@ class Solution(object):
         p1=0
         p2=len(numbers)-1
 
-        while p2>0 and p1<len(numbers):
+        while p1<p2:
             res = numbers[p1]+numbers[p2]
             if res < target:
                 p1+=1
