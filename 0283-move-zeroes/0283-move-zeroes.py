@@ -17,5 +17,4 @@ class Solution(object):
             else:
                 p1+=1
                 p2+=1
-        
         return nums
