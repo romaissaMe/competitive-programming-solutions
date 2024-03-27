@@ -1,4 +1,4 @@
-import numpy as np
+
 class Solution(object):
     def numSubarrayProductLessThanK(self, nums, k):
         """
