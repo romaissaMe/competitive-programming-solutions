@@ -8,6 +8,6 @@ class Solution:
                 a=stack.pop()
                 stack.append(int(eval(f"{a}{tk}{b}")))
             else:
-                stack.append(tk)
+                stack.append(int(tk))
         
-        return int(stack.pop())
+        return stack.pop()
