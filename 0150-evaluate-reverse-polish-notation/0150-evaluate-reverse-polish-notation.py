@@ -10,4 +10,4 @@ class Solution:
             else:
                 stack.append(tk)
         
-        return stack.pop()
+        return int(stack.pop())
