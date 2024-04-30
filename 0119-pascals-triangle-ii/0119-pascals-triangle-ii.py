@@ -8,7 +8,6 @@ class Solution:
         
         else:
             res = self.getRow(rowIndex-1)
-            print(res)
             ans = [1]*(rowIndex+1)
             for i in range(1,rowIndex):
                 ans[i]=res[i-1]+res[i]
