@@ -9,22 +9,21 @@ class Solution:
         visited = set()
 
         for node, child in redEdges:
-            graph[node].append((child,"red"))
+            graph[node].append((child,"r"))
 
         for node, child in blueEdges:
-            graph[node].append((child,"blue"))
+            graph[node].append((child,"b"))
         
         
         q.put((0,None,0))
         
         while not q.empty():
             node,c,l = q.get()
-            if (node,c) not in visited:
-                for child in graph[node]:
-                    if child[1] != c:
+            for child in graph[node]:
+                if child[1] != c and (child[0],child[1]) not in visited:
                         q.put((child[0],child[1],l+1))
                         ans[child[0]]=min(ans[child[0]],l+1)       
-                visited.add((node,c))
+                        visited.add((child[0],child[1]))
 
         for i in range(len(ans)):
             if ans[i]==float('inf'):
