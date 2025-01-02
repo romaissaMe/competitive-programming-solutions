@@ -5,15 +5,30 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        p1=0
-        p2=len(numbers)-1
 
-        while p1<p2:
-            res = numbers[p1]+numbers[p2]
-            if res < target:
-                p1+=1
-            elif res > target:
-                p2-=1
-            elif res == target:
-                return [p1+1,p2+1]
+        #find the boundary
+        h = len(numbers)-1
+        l = 0
+    
+
+        while l < h:
+            i = (l + h) // 2  
+            if numbers[i] > target:
+                h = i  
+            else:
+                l = i + 1 
+        
+        h=l
+        l=0
+        while l<h:
+            if numbers[l]+numbers[h]>target:
+                h-=1
+            elif numbers[l]+numbers[h]==target:
+                return [l+1,h+1]
+            else:
+                l+=1
+        
+
+
+                
         
